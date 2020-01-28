@@ -40,7 +40,9 @@ public class App {
         JSONArray colorarray = hexbotresponse.getJSONArray("colors");
         JSONObject color = colorarray.getJSONObject(0);
         System.out.println("result after Reading JSON Response");
-        System.out.println(color.getString("value"));
+        String value = color.getString("value");
+        Display display = new Display(value);
+        display.createJframe();
     }
 
 }
